@@ -1,0 +1,6 @@
+services:
+  ffc-ffd-backend-poc:
+    command: >
+      sh -c "npm run test:watch"
+    volumes:
+      - ./.git:/home/node/.git

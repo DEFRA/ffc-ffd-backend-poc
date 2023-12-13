@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "ffc-ffd-backend-poc"
+  description: "Proof of concept FFD backend"
+  annotations:
+    github.com/project-slug: defra/ffc-ffd-backend-poc
+spec:
+  type: backend
+  lifecycle: alpha
+  owner: "group:default/fcp-ffd"
+  system: system:default/fcp-ffd-system
+  
