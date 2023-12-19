@@ -38,7 +38,8 @@ resources:
 extends:
   template: /pipelines/common-app-build.yaml@DEFRA-ADPPipelineCommon
   parameters:
-    projectName: "FFCTemplateNode"
+    projectName: "FFCFFDBackEndPoc"
+    serviceName: "ffc-ffd-backend-poc"
     deployFromFeature: ${{ parameters.deployFromFeature }}
     appBuildConfig:
       appFrameworkType: "nodejs"    
