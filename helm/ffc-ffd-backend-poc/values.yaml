@@ -11,13 +11,6 @@ labels:
 appInsights:
   connectionString:
 
-containerConfigMap:
-  name: ffc-ffd-backend-poc-config-map
-
-containerSecret:
-  name: ffc-ffd-backend-poc-container-secret
-  type: Opaque
-
 deployment: {}
 
 container:

@@ -1,0 +1,23 @@
+[
+    {
+        "key": "NODE_ENV",
+        "value": "production",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "PORT",
+        "value": "3000",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "APPINSIGHTS_CLOUDROLE",
+        "value": "{{serviceName}}",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    }
+]

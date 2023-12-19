@@ -1,6 +1,6 @@
 apiVersion: v2
 description: A Helm Chart to deploy the ffc-ffd-backend-poc application to Kubernetes
-name: adp-template-node
+name: ffc-ffd-backend-poc
 # this version is automatically updated in the build pipeline
 version: 1.0.0
 dependencies:
