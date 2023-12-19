@@ -2,7 +2,7 @@
   "name": "ffc-ffd-backend-poc",
   "version": "0.1.2",
   "description": "Proof of concept FFD backend",
-  "homepage": "github.com?owner=defra&repo=ffc-ffd-backend-poc&organization=defra-adp-sandpit",
+  "homepage": "github.com?owner=defra&repo=ffc-ffd-backend-poc&organization=defra",
   "main": "app/index.js",
   "scripts": {
     "pretest": "npm run test:lint",
