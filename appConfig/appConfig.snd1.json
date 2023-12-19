@@ -1,0 +1,44 @@
+[
+    {
+        "key": "NODE_ENV",
+        "value": "production",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "PORT",
+        "value": "3000",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "REST_CLIENT_TIMEOUT_IN_MILLIS",
+        "value": "20000",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "STATIC_CACHE_TIMEOUT_IN_MILLIS",
+        "value": "54000",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "APPINSIGHTS_CLOUDROLE",
+        "value": "{{serviceName}}",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    },
+    {
+        "key": "Sentinel",
+        "value": "1",
+        "label": "{{serviceName}}",
+        "content_type": "",
+        "tags": {}
+    }
+]
