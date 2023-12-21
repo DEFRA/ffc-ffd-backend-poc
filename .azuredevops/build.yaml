@@ -48,3 +48,11 @@ extends:
       imageRepoName: "ffc-ffd-backend-poc"
     appTestConfig:
       testFilePath: "./docker-compose.test.yaml"
+    appDeployConfig:
+      filepath: "./appConfig"  
+      variableGroups: 
+        - ffc-ffd-backend-poc-snd1
+        - ffc-ffd-backend-poc-snd2
+        - ffc-ffd-backend-poc-snd3
+      variables:
+        - ffc-ffd-backend-poc-APPINSIGHTS-CONNECTIONSTRING

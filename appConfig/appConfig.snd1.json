@@ -19,5 +19,12 @@
         "label": "{{serviceName}}",
         "content_type": "",
         "tags": {}
+    },
+    {
+        "key": "APPINSIGHTS_CONNECTIONSTRING",
+        "value": "{\"{{resourceid}}/{{servicename}}-APPINSIGHTS-CONNECTIONSTRING\"}",
+        "label": "{{serviceName}}",
+        "content_type": "{{keyVaultContentType}}",
+        "tags": {}
     }
 ]
