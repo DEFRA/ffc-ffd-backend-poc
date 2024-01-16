@@ -1,8 +1,7 @@
-const server = require('./server')
+require('./insights').setup()
 
 const init = async () => {
-  await server.start()
-  console.log('Server running on %s', server.info.uri)
+  console.log('hello world')
 }
 
 process.on('unhandledRejection', (err) => {
