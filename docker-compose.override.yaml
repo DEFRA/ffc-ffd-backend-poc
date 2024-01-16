@@ -8,8 +8,16 @@ services:
     image: ffc-ffd-backend-poc-development
     container_name: ffc-ffd-backend-poc-development
     ports:
-      - "3000:3000"
-      - "9229:9229"
+      - "9228:9229"
     volumes:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
+
+  ffc-ffd-backend-poc-postgres:
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: 
