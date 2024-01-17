@@ -19,5 +19,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  ffc-ffd-backend-poc-redis:
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --dir /data --save 5 1
+
 volumes:
-  postgres_data: 
+  postgres_data:
+  redis_data:
