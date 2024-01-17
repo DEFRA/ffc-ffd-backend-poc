@@ -1,6 +1,6 @@
 {
   "name": "ffc-ffd-backend-poc",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Proof of concept FFD backend",
   "homepage": "github.com?owner=defra&repo=ffc-ffd-backend-poc&organization=defra",
   "main": "app/index.js",
