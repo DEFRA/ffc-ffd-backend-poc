@@ -2,6 +2,23 @@ require('./insights').setup()
 const { MessageReceiver } = require('ffc-messaging')
 const { Client } = require('pg')
 const { createClient } = require('redis')
+const { BlobServiceClient } = require('@azure/storage-blob')
+
+const saveToBlobStorage = async (message) => {
+  const connStr = process.env.BLOB_STORAGE_CONNECTION_STRING
+  const blobServiceClient = BlobServiceClient.fromConnectionString(connStr)
+
+  const containerName = 'messages'
+  const containerClient = blobServiceClient.getContainerClient(containerName)
+  const createContainerResponse = await containerClient.createIfNotExists()
+  console.log(`Create container ${containerName} successfully`, createContainerResponse.requestId)
+
+  const content = JSON.stringify(message.body)
+  const blobName = 'newMessage.JSON'
+  const blockBlobClient = containerClient.getBlockBlobClient(blobName)
+  const uploadBlobResponse = await blockBlobClient.upload(content, content.length)
+  console.log(`Upload block blob ${blobName} successfully`, uploadBlobResponse.requestId)
+}
 
 const saveToRedis = async (message) => {
   const client = await createClient({
@@ -36,6 +53,7 @@ const saveToPostgres = async (message) => {
 const handleMessage = async (message) => {
   await saveToPostgres(message)
   await saveToRedis(message)
+  await saveToBlobStorage(message)
 }
 
 const init = async () => {
@@ -44,8 +62,8 @@ const init = async () => {
     host: process.env.MESSAGE_HOST,
     username: process.env.MESSAGE_USER,
     password: process.env.MESSAGE_PASSWORD,
-    address: 'ffc-ffd-backend-poc',
-    topic: 'ffc-ffd-data',
+    address: 'ffc-ffd-backend-poc-data-subscription',
+    topic: 'ffc-ffd-backend-poc-data',
     type: 'subscription'
   }, handleMessage)
 

@@ -26,6 +26,13 @@ services:
       - redis_data:/data
     command: redis-server --dir /data --save 5 1
 
+  ffc-ffd-backend-poc-azurite:
+    volumes:
+      - azurite_data:/data
+    ports:
+      - "10000:10000"
+
 volumes:
   postgres_data:
   redis_data:
+  azurite_data:

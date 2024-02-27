@@ -1,12 +1,10 @@
 namespace: ffc-ffd
-namespaceQueues:
-  - name: backend
-    owner: 'no'
-    roleAssignments:
-      - roleName: 'QueueReceiver'
-
-postgres:
-  db:
-    name: backend 
-    charset: UTF8
-    collation: en_US.utf8
+namespaceTopics:
+  - name: backend-poc-data
+    owner: 'yes'
+    roleAssignments:  
+    - roleName: TopicSender
+    - roleName: TopicReceiver 
+    topicSubscriptions:
+    - name: backend-poc-data-subscription
+  

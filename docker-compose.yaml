@@ -29,3 +29,7 @@ services:
   
   ffc-ffd-backend-poc-redis:
     image: redis:6.2
+
+  ffc-ffd-backend-poc-azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.29.0
+    command: "azurite-blob --loose --blobHost 0.0.0.0"
