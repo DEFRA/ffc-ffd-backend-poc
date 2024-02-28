@@ -19,7 +19,7 @@ services:
     environment:
       << : [*common-postgres, *common-migration]
     entrypoint: >
-      sh -c "/scripts/migration/database-up"
+      sh -c "/scripts/migration/database-up $${SCHEMA_PASSWORD}"
     depends_on:
       - ffc-ffd-backend-poc-postgres
     volumes:
@@ -45,4 +45,4 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data:
+  postgres_data: {}
