@@ -7,4 +7,9 @@ namespaceTopics:
     - roleName: TopicReceiver 
     topicSubscriptions:
     - name: backend-poc-data-subscription
-  
+
+postgres:
+  db:
+    name: backend 
+    charset: UTF8
+    collation: en_US.utf8
