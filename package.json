@@ -1,6 +1,6 @@
 {
   "name": "ffc-ffd-backend-poc",
-  "version": "0.1.6",
+  "version": "0.2.3",
   "description": "Proof of concept FFD backend",
   "homepage": "github.com?owner=defra&repo=ffc-ffd-backend-poc&organization=defra",
   "main": "app/index.js",
@@ -17,8 +17,13 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
+    "@azure/storage-blob": "12.17.0",
     "@hapi/hapi": "21.3.2",
-    "applicationinsights": "2.8.0"
+    "applicationinsights": "2.8.0",
+    "ffc-messaging": "2.8.0",
+    "pg": "8.11.3",
+    "postgres": "3.4.3",
+    "redis": "4.6.12"
   },
   "devDependencies": {
     "jest": "29.7.0",

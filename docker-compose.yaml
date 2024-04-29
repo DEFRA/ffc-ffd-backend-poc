@@ -5,6 +5,31 @@ services:
       target: production
     image: ffc-ffd-backend-poc
     container_name: ffc-ffd-backend-poc
+    depends_on:
+      - ffc-ffd-backend-poc-postgres
     environment:
       APPINSIGHTS_CLOUDROLE: ffc-ffd-backend-poc-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      POSTGRES_DB: ffc_ffd_backend_poc
+      POSTGRES_HOST: ${POSTGRES_HOST:-ffc-ffd-backend-poc-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_SCHEMA_PASSWORD:-ppp}
+      POSTGRES_PORT: 5432
+      POSTGRES_SCHEMA_NAME: ${POSTGRES_SCHEMA_NAME:-public}
+      POSTGRES_USERNAME: ${POSTGRES_SCHEMA_USERNAME:-postgres}
+      MESSAGE_HOST: ${MESSAGE_HOST}
+      MESSAGE_USER: ${MESSAGE_USER}
+      MESSAGE_PASSWORD: ${MESSAGE_PASSWORD}
+
+  ffc-ffd-backend-poc-postgres:
+    image: postgres:11.4-alpine
+    environment:
+      POSTGRES_DB: ffc_ffd_backend_poc
+      POSTGRES_PASSWORD: ppp
+      POSTGRES_USERNAME: postgres
+  
+  ffc-ffd-backend-poc-redis:
+    image: redis:6.2
+
+  ffc-ffd-backend-poc-azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.29.0
+    command: "azurite-blob --loose --blobHost 0.0.0.0"
